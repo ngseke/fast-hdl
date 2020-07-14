@@ -9,8 +9,8 @@ const fieldNames = [
 window.addEventListener('DOMContentLoaded', execute)
 
 function isLau () {
-  const keywords = ["\u6d77\u5e95", "\u795e\u79d8"]
-  return keywords.every(_ => document.body.textContent.includes(_))
+  const keywords = ["\u6d77\u5e95"]
+  return keywords.every(_ => document.title.includes(_))
 }
 
 function execute () {
