@@ -5,7 +5,6 @@ const fieldNames = [
   { name: 'email', keyword: '信' },
 ]
 
-
 window.addEventListener('DOMContentLoaded', execute)
 
 function isLau () {
@@ -22,7 +21,7 @@ function execute () {
     const input = findInput(keyword)
     if (!input) return
     chrome.storage.sync.get(name, value => {
-      input.value = value[name] || ''
+      input.value = value[name] ?? ''
       input.dispatchEvent(new Event('input', { bubbles: true }))
     })
   })
@@ -33,21 +32,22 @@ function execute () {
   }, 100)
 }
 
+// Chhōe input
 function findInput (searchText) {
   let tags = document.querySelectorAll(".freebirdFormviewerComponentsQuestionBaseRoot")
   let found
 
   for (let i = 0; i < tags.length; i++) {
     if (tags[i].textContent.includes(searchText)) {
-      found = tags[i];
-      break;
+      found = tags[i]
+      break
     }
   }
   if (!found) return
   return found.querySelector('input')
 }
- 
- 
+
+// Phah-khui tiàm-bīn ê menu
 function openSelect () {
   document.querySelector('[role="listbox"] > [role="presentation"]')
     .dispatchEvent(new Event('click', { bubbles: true }))

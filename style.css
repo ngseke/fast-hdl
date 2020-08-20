@@ -1,12 +1,12 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   background-color: #e63946;
@@ -15,24 +15,19 @@ body {
 h1 {
   user-select: none;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: normal;
   margin: 0;
   padding: .75rem .75rem;
-  background-color: #e63946;
-  letter-spacing: 3px;
-  color: rgba(255,255,255,.3);
-  box-shadow: 0 0 10px rgba(230, 57, 70, .5);
-  flex: 0 0 auto;
+  letter-spacing: -1px;
+  color: white;
 }
 
-h1 span {
-  display: inline-block;
-  transform: translate(15px, 15px) scale(3);
-  transition: all .3s;
+h1::after {
+  content: '𝑯𝑫𝑳 𝙵𝚒𝚕𝚕𝚎𝚛';
 }
 
 section {
-  padding: 1rem .75rem;
+  padding: 0rem .75rem 1rem;
   flex: 1 1 auto;
 }
 
@@ -51,21 +46,26 @@ label {
   flex: 0 0 70px;
   color: white;
   user-select: none;
-  letter-spacing: 1px;
+  font-weight: 900;
 }
 
 input {
   flex: 1 1 auto;
   width: auto;
-  color: #e63946;
+  color: white;
   border: none;
-  border-bottom: solid #ddd 1px;
-  padding: 3px;
+  border-bottom: solid white 1px;
+  background-color: transparent;
+  padding: 3px 5px;
   outline: none;
-  transition: border .3s;
+  transition: all .3s;
 }
 
 input:focus {
-  border-color: #e63946;
-  font-weight: bold;
+  background-color: rgba(255, 255, 255, .2);
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, .5);
+  opacity: 1;
 }
