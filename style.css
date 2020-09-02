@@ -54,15 +54,14 @@ input {
   width: auto;
   color: white;
   border: none;
-  border-bottom: solid white 1px;
+  border-bottom: solid rgba(255, 255, 255, .5) 1px;
   background-color: transparent;
   padding: 3px 5px;
   outline: none;
-  transition: all .3s;
 }
 
 input:focus {
-  background-color: rgba(255, 255, 255, .2);
+  border-bottom-color: rgba(255, 255, 255, 1);
 }
 
 input::placeholder {
